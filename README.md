@@ -27,11 +27,15 @@ Each writeup is my own methodology: recon → enumeration → exploitation → p
 
 ---
 
-## ⭐ Featured writeup
+## ⭐ Featured writeups
 
 ### [Domino](https://tryhackme.com/room/domino) — Medium — Web + Linux PrivEsc
 Full kill-chain: hardcoded key in client JS → AES-ECB config decryption → **JWT signature-bypass** (role forgery) → **RFI → RCE** → admin-bot session hijack → credential reuse → group-writable root cron = **full root compromise**.
 📄 **[Read the writeup »](./Domino/Readme.md)**
+
+### [The Marketplace](https://tryhackme.com/room/marketplace) — Medium — Web + PrivEsc + Docker Escape
+**Stored XSS** → steal admin cookie via the report feature → **SQL injection** leaks an SSH password hidden in private messages → credential reuse → **`tar` wildcard injection** (sudo) → **Docker group escape** to root.
+📄 **[Read the writeup »](./Marketplace/README.md)**
 
 ---
 
@@ -86,6 +90,7 @@ A fast-growing, under-covered field. Prompt injection, jailbreaking, RAG/supply-
 | Room | Difficulty | Focus | Writeup |
 |---|---|---|---|
 | [Domino](https://tryhackme.com/room/domino) | Medium | JWT bypass · RFI→RCE · chain | ✅ |
+| [The Marketplace](https://tryhackme.com/room/marketplace) | Medium | Stored XSS · SQLi · tar wildcard · Docker escape | ✅ |
 | [Pickle Rick](https://tryhackme.com/room/picklerick) | Easy | Web enum · command exec | 📝 |
 | [NahamStore](https://tryhackme.com/room/nahamstore) | Medium | Bug-bounty web | 📝 |
 | [Injectics](https://tryhackme.com/room/injectics) | Medium | SQLi · SQLMap | 📝 |
