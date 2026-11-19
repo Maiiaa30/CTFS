@@ -37,6 +37,10 @@ Full kill-chain: hardcoded key in client JS → AES-ECB config decryption → **
 **Stored XSS** → steal admin cookie via the report feature → **SQL injection** leaks an SSH password hidden in private messages → credential reuse → **`tar` wildcard injection** (sudo) → **Docker group escape** to root.
 📄 **[Read the writeup »](./Marketplace/README.md)**
 
+### [Watcher](https://tryhackme.com/room/watcher) — Medium — Web + Linux PrivEsc
+**LFI** in `?post=` reads a protected file leaking **FTP creds** → upload a PHP shell to a writable FTP dir and trigger it via **path-traversal include** (LFI → RCE) → **four privesc hops**: writable cron script → **Python module hijack** of a sudo script → root **SSH key** in `/opt/backups`.
+📄 **[Read the writeup »](./Watcher/README.md)**
+
 ---
 
 ## 📚 Full index
@@ -91,6 +95,7 @@ A fast-growing, under-covered field. Prompt injection, jailbreaking, RAG/supply-
 |---|---|---|---|
 | [Domino](https://tryhackme.com/room/domino) | Medium | JWT bypass · RFI→RCE · chain | ✅ |
 | [The Marketplace](https://tryhackme.com/room/marketplace) | Medium | Stored XSS · SQLi · tar wildcard · Docker escape | ✅ |
+| [Watcher](https://tryhackme.com/room/watcher) | Medium | LFI→RCE · path traversal · cron · Python hijack · SSH key | ✅ |
 | [Pickle Rick](https://tryhackme.com/room/picklerick) | Easy | Web enum · command exec | 📝 |
 | [NahamStore](https://tryhackme.com/room/nahamstore) | Medium | Bug-bounty web | 📝 |
 | [Injectics](https://tryhackme.com/room/injectics) | Medium | SQLi · SQLMap | 📝 |
@@ -277,6 +282,10 @@ ctf-writeups/
 ├── _TEMPLATE_writeup.md      # copy this to start a new writeup
 ├── Domino/
 │   └── Readme.md             # ✅ published
+├── Marketplace/
+│   └── README.md             # ✅ published
+├── Watcher/
+│   └── README.md             # ✅ published
 ├── PickleRick/
 │   └── Readme.md             # (next)
 └── ...                       # one folder per room, as I publish
