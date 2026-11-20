@@ -1,14 +1,33 @@
 <!-- Repo suggestion: name it `tryhackme-writeups` or `ctf-writeups` on github.com/Maiiaa30 -->
 
-# 🧪 TryHackMe Writeups & CTF Portfolio — Diogo Rodrigues
+# TryHackMe Writeups & CTF Portfolio
 
-Offensive-security practitioner based in Braga, Portugal. Web-dev background, now focused on penetration testing and red teaming. This repo documents hands-on work across **140+ TryHackMe rooms** — web exploitation, Linux/Windows privilege escalation, Active Directory, network attacks, and a deep focus on the emerging field of **AI / LLM security**.
+### Diogo Rodrigues — Junior Penetration Tester / Red Teamer · Braga, Portugal
 
-Each writeup is my own methodology: recon → enumeration → exploitation → privilege escalation → lessons learned. Flags are redacted per CTF etiquette.
+<p>
+  <img alt="Rooms completed" src="https://img.shields.io/badge/TryHackMe_rooms-140%2B-c11b17">
+  <img alt="Focus" src="https://img.shields.io/badge/focus-Web_·_PrivEsc_·_AI%2FLLM-1f6feb">
+  <img alt="Writeups" src="https://img.shields.io/badge/writeups-3_published-2ea043">
+  <img alt="PenTest+" src="https://img.shields.io/badge/CompTIA_PenTest%2B-in_progress-f5a623">
+</p>
 
-🔗 **TryHackMe profile:** [tryhackme.com/p/Maiaa](https://tryhackme.com/p/Maiaa)
-🔗 **LinkedIn:** [linkedin.com/in/diogorodrigues-6a3964412](https://www.linkedin.com/in/diogorodrigues-6a3964412)
-📧 diogomaia2003@gmail.com
+A curated portfolio of hands-on offensive-security work across **140+ TryHackMe
+rooms** — covering web application exploitation, Linux and Windows privilege
+escalation, Active Directory, network attacks, and a dedicated focus on the
+emerging field of **AI / LLM security**.
+
+Every published writeup documents the full engagement in my own words and
+methodology — **recon → enumeration → exploitation → privilege escalation →
+remediation lessons** — written to a standard a hiring team can read like a
+condensed pentest report. Each vulnerability is paired with a one-line real-world
+*Lesson* on root cause and defence. Flags and credentials are redacted per CTF
+etiquette.
+
+**Contact**
+&nbsp;·&nbsp; 🔗 [TryHackMe](https://tryhackme.com/p/Maiaa)
+&nbsp;·&nbsp; 🔗 [LinkedIn](https://www.linkedin.com/in/diogorodrigues-6a3964412)
+&nbsp;·&nbsp; 💻 [GitHub](https://github.com/Maiiaa30)
+&nbsp;·&nbsp; 📧 diogomaia2003@gmail.com
 
 ---
 
@@ -16,8 +35,9 @@ Each writeup is my own methodology: recon → enumeration → exploitation → p
 
 | | |
 |---|---|
-| **Rooms completed** | 140+ |
+| **Rooms completed** | 140+ on TryHackMe ([profile](https://tryhackme.com/p/Maiaa)) |
 | **Primary focus** | Web app exploitation · Linux/Windows privesc · AI/LLM security |
+| **Methodology** | Recon → enumeration → exploitation → privilege escalation → remediation |
 | **Core tools** | Burp Suite · Nmap · Metasploit · Gobuster/ffuf · Hydra · Hashcat · Wireshark · SQLMap · LinPEAS/WinPEAS |
 | **Scripting** | Python · Bash |
 | **Certification** | CompTIA PenTest+ (in progress) · Rumos Penetration Testing course |
@@ -46,7 +66,7 @@ Full kill-chain: hardcoded key in client JS → AES-ECB config decryption → **
 ## 📚 Full index
 
 > ✅ = writeup published · 📝 = completed, writeup planned. Every room links to TryHackMe.
-> This index mirrors my completed rooms; writeups are being added over time (Domino first).
+> This index mirrors my completed rooms. Full writeups are published progressively, prioritising the rooms that best demonstrate methodology — **3 published so far** ([Domino](./Domino/Readme.md), [Marketplace](./Marketplace/README.md), [Watcher](./Watcher/README.md)).
 
 <details open>
 <summary><h3>🤖 AI / LLM Security — my specialisation (30+ rooms)</h3></summary>
