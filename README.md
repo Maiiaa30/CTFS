@@ -69,7 +69,7 @@ Full kill-chain: hardcoded key in client JS → AES-ECB config decryption → **
 > This index mirrors my completed rooms. Full writeups are published progressively, prioritising the rooms that best demonstrate methodology — **3 published so far** ([Domino](./Domino/Readme.md), [Marketplace](./Marketplace/README.md), [Watcher](./Watcher/README.md)).
 
 <details open>
-<summary><h3>🤖 AI / LLM Security — my specialisation (30+ rooms)</h3></summary>
+<summary><h3>🤖 AI / LLM Security (30+ rooms)</h3></summary>
 
 A fast-growing, under-covered field. Prompt injection, jailbreaking, RAG/supply-chain attacks, and AI threat modelling — red, blue and purple.
 
