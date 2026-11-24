@@ -7,7 +7,7 @@
 <p>
   <img alt="Rooms completed" src="https://img.shields.io/badge/TryHackMe_rooms-140%2B-c11b17">
   <img alt="Focus" src="https://img.shields.io/badge/focus-Web_·_PrivEsc_·_AI%2FLLM-1f6feb">
-  <img alt="Writeups" src="https://img.shields.io/badge/writeups-3_published-2ea043">
+  <img alt="Writeups" src="https://img.shields.io/badge/writeups-4_published-2ea043">
   <img alt="PenTest+" src="https://img.shields.io/badge/CompTIA_PenTest%2B-in_progress-f5a623">
 </p>
 
@@ -61,12 +61,16 @@ Full kill-chain: hardcoded key in client JS → AES-ECB config decryption → **
 **LFI** in `?post=` reads a protected file leaking **FTP creds** → upload a PHP shell to a writable FTP dir and trigger it via **path-traversal include** (LFI → RCE) → **four privesc hops**: writable cron script → **Python module hijack** of a sudo script → root **SSH key** in `/opt/backups`.
 📄 **[Read the writeup »](./Watcher/README.md)**
 
+### [Empline](https://tryhackme.com/room/empline) — Medium — Web + Linux PrivEsc
+**Virtual-host enumeration** uncovers a hidden `job.` subdomain running **OpenCATS** → known **RCE** (Exploit-DB 50585) for a foothold → privesc through a rare Linux **file capability**: `cap_chown` on the `ruby` binary is abused to seize `/etc/shadow`, rewrite the root hash, and `su` to **root**.
+📄 **[Read the writeup »](./Empline/README.md)**
+
 ---
 
 ## 📚 Full index
 
 > ✅ = writeup published · 📝 = completed, writeup planned. Every room links to TryHackMe.
-> This index mirrors my completed rooms. Full writeups are published progressively, prioritising the rooms that best demonstrate methodology — **3 published so far** ([Domino](./Domino/Readme.md), [Marketplace](./Marketplace/README.md), [Watcher](./Watcher/README.md)).
+> This index mirrors my completed rooms. Full writeups are published progressively, prioritising the rooms that best demonstrate methodology — **4 published so far** ([Domino](./Domino/Readme.md), [Marketplace](./Marketplace/README.md), [Watcher](./Watcher/README.md), [Empline](./Empline/README.md)).
 
 <details open>
 <summary><h3>🤖 AI / LLM Security (30+ rooms)</h3></summary>
@@ -116,6 +120,7 @@ A fast-growing, under-covered field. Prompt injection, jailbreaking, RAG/supply-
 | [Domino](https://tryhackme.com/room/domino) | Medium | JWT bypass · RFI→RCE · chain | ✅ |
 | [The Marketplace](https://tryhackme.com/room/marketplace) | Medium | Stored XSS · SQLi · tar wildcard · Docker escape | ✅ |
 | [Watcher](https://tryhackme.com/room/watcher) | Medium | LFI→RCE · path traversal · cron · Python hijack · SSH key | ✅ |
+| [Empline](https://tryhackme.com/room/empline) | Medium | Vhost enum · OpenCATS RCE · cap_chown privesc | ✅ |
 | [Pickle Rick](https://tryhackme.com/room/picklerick) | Easy | Web enum · command exec | 📝 |
 | [NahamStore](https://tryhackme.com/room/nahamstore) | Medium | Bug-bounty web | 📝 |
 | [Injectics](https://tryhackme.com/room/injectics) | Medium | SQLi · SQLMap | 📝 |
@@ -305,6 +310,8 @@ ctf-writeups/
 ├── Marketplace/
 │   └── README.md             # ✅ published
 ├── Watcher/
+│   └── README.md             # ✅ published
+├── Empline/
 │   └── README.md             # ✅ published
 ├── PickleRick/
 │   └── Readme.md             # (next)
